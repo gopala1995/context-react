@@ -9,7 +9,7 @@ export const Users = () => {
       .then(({ data }) => setUser(data));
   }, []);
 
-  const isAuth = true
+  const isAuth = true  //Declerative
   if(!isAuth){
       return <Navigate to = "/login"/>
   }
