@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
 
 export const Users = () => {
   const [users, setUser] = useState([]);
@@ -8,6 +8,11 @@ export const Users = () => {
       .then((x) => x.json())
       .then(({ data }) => setUser(data));
   }, []);
+
+  const isAuth = true
+  if(!isAuth){
+      return <Navigate to = "/login"/>
+  }
 
   return (
     <div>
